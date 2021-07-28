@@ -35,9 +35,16 @@ namespace MipSolver.Entities
             //this.Add(new Warehouse() { Id =0, Name = "BAML", MinUtilization = 55, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 2.4, AdvanceRate = 1, PenaltyRate = 2 });
             //this.Add(new Warehouse() { Id =1, Name = "CHASE", MinUtilization = 55, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 2, AdvanceRate = 1, PenaltyRate = 2.5 });
 
-            //data 2,4 
-            this.Add(new Warehouse() { Id = 0, Name = "BAML", MinUtilization = 60, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 2, AdvanceRate = .9, PenaltyRate = 1.2 });
-            this.Add(new Warehouse() { Id = 1, Name = "CHASE", MinUtilization = 60, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 3, AdvanceRate = .9, PenaltyRate = 1.1 });
+            ////data 2,4 
+            //this.Add(new Warehouse() { Id = 0, Name = "BAML", MinUtilization = 60, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 2, AdvanceRate = .9, PenaltyRate = 1.2 });
+            //this.Add(new Warehouse() { Id = 1, Name = "CHASE", MinUtilization = 60, UtilisedAmount = 40, TotalLimit = 100, InterestRate = 3, AdvanceRate = .9, PenaltyRate = 1.1 });
+
+
+            //5 by 3
+            //data 1
+            this.Add(new Warehouse() { Id = 0, Name = "BAML", MinUtilization = 250, UtilisedAmount = 0, TotalLimit = 250, InterestRate = 2.1, AdvanceRate = 1, PenaltyRate = 1.1 });
+            this.Add(new Warehouse() { Id = 1, Name = "CHASE", MinUtilization = 400, UtilisedAmount = 0, TotalLimit = 400, InterestRate = 2.2, AdvanceRate = 1, PenaltyRate = 1.3 });
+            this.Add(new Warehouse() { Id = 2, Name = "UBS", MinUtilization = 300, UtilisedAmount = 0, TotalLimit = 300, InterestRate = 2, AdvanceRate = 1, PenaltyRate = 1.2 });
 
 
         }

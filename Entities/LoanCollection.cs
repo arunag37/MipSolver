@@ -27,10 +27,23 @@ namespace MipSolver.Entities
             //this.Add(new Loan() { Id = 0, Name = "Loan-1", LoanAmount = 10, Cost = 2.00 });
             //this.Add(new Loan() { Id = 1, Name = "Loan-2", LoanAmount = 15, Cost = 0.75 });
             //this.Add(new Loan() { Id = 2, Name = "Loan-3", LoanAmount = 12, Cost = 0.75 });
-            //data 4
-            this.Add(new Loan() { Id = 0, Name = "Loan-1", LoanAmount = 80, Cost = 2.00 });
-            this.Add(new Loan() { Id = 1, Name = "Loan-2", LoanAmount = 15, Cost = 0.75 });
-            this.Add(new Loan() { Id = 2, Name = "Loan-3", LoanAmount = 12, Cost = 0.75 });
+            ////data 4
+            //this.Add(new Loan() { Id = 0, Name = "Loan-1", LoanAmount = 80, Cost = 2.00 });
+            //this.Add(new Loan() { Id = 1, Name = "Loan-2", LoanAmount = 15, Cost = 0.75 });
+            //this.Add(new Loan() { Id = 2, Name = "Loan-3", LoanAmount = 12, Cost = 0.75 });
+
+            //5 by 3
+            //data 1
+            this.Add(new Loan() { Id = 0, Name = "Loan-1", LoanAmount = 100, Cost = 2.00 });
+            this.Add(new Loan() { Id = 1, Name = "Loan-2", LoanAmount = 200, Cost = 0.75 });
+            this.Add(new Loan() { Id = 2, Name = "Loan-3", LoanAmount = 150, Cost = 0.75 });
+            this.Add(new Loan() { Id = 3, Name = "Loan-4", LoanAmount = 300, Cost = 0.75 });
+            this.Add(new Loan() { Id = 4, Name = "Loan-5", LoanAmount = 75, Cost = 0.75 });
         }
     }
 }
+
+
+
+
+

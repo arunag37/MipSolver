@@ -94,42 +94,6 @@ namespace MipSolver
                 }
             }
 
-            ////Constraint 2 :Loan amount assigned to a warehouse can't exceed its limit
-            //foreach (var warehouse in warehouses)
-            //{
-            //    var pendingLimit = warehouse.TotalLimit - warehouse.UtilisedAmount;
-            //    Constraint constraint = solver2.MakeConstraint(0, pendingLimit, "");
-            //    foreach (var loan in loans)
-            //    {
-            //        constraint.SetCoefficient(a[loan.Id, warehouse.Id], loan.LoanAmount * warehouse.AdvanceRate);
-            //    }
-            //}
-
-            ////Constraint 3 : amount utilization should be same as max utilization amount
-            //Constraint constraint1 = solver2.MakeConstraint(maxUtilAmt, maxUtilAmt, "");
-            //foreach (var warehouse in warehouses)
-            //{ 
-            //    foreach (var loan in loans)
-            //    {
-            //        constraint1.SetCoefficient(a[loan.Id, warehouse.Id], loan.LoanAmount * warehouse.AdvanceRate);
-            //    }
-            //}
-            ////Constraint 4
-            //foreach (var warehouse in warehouses)
-            //{
-            //    double amountTemp = warehouse.MinUtilization - warehouse.UtilisedAmount;
-            //    LinearExpr tmp1 = new LinearExpr();
-
-            //    foreach (var loan in loans)
-            //    {
-            //        tmp1 += (a[loan.Id, warehouse.Id] * loan.LoanAmount * warehouse.AdvanceRate);
-            //    }
-            //    var data = (amountTemp - tmp1);
-
-            //    solver2.Add(data <= z[warehouse.Id]);
-            //    solver2.Add(-data <= z[warehouse.Id]);
-
-            //}
             LinearExpr totalLoss = new LinearExpr();
             LinearExpr totalUtilAmount = new LinearExpr();
 

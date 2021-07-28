@@ -1,0 +1,17 @@
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.exe
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.deps.json
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.runtimeconfig.json
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.runtimeconfig.dev.json
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.dll
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\MipSolver.pdb
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\Google.OrTools.dll
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\AG\Level 3\MipSolver\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\google-ortools-native.dll
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.csprojAssemblyReference.cache
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.AssemblyInfoInputs.cache
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.AssemblyInfo.cs
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.csproj.CoreCompileInputs.cache
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.csproj.CopyComplete
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.dll
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.pdb
+C:\AG\Level 3\MipSolver\obj\Debug\netcoreapp3.1\MipSolver.genruntimeconfig.cache

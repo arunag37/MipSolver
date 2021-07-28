@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "DHi+KmE8zMdSqofIIskWLgsKuewfOIpiM1yXVcYrjGh9WQsYGsGvG68Gq/YWSJ2qrTYFH+aa3yjk8oNdez4b0w==",
+  "success": true,
+  "projectFilePath": "C:\\AG\\Level 3\\MipSolver\\MipSolver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arunag\\.nuget\\packages\\google.ortools\\9.0.9048\\google.ortools.9.0.9048.nupkg.sha512",
+    "C:\\Users\\arunag\\.nuget\\packages\\google.ortools.runtime.win-x64\\9.0.9048\\google.ortools.runtime.win-x64.9.0.9048.nupkg.sha512",
+    "C:\\Users\\arunag\\.nuget\\packages\\google.protobuf\\3.15.8\\google.protobuf.3.15.8.nupkg.sha512",
+    "C:\\Users\\arunag\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\arunag\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Google.OrTools.runtime.win-x64 9.0.9048' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Google.OrTools.runtime.win-x64",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

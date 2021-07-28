@@ -1,0 +1,96 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MipSolver/1.0.0": {
+        "dependencies": {
+          "Google.OrTools": "9.0.9048"
+        },
+        "runtime": {
+          "MipSolver.dll": {}
+        }
+      },
+      "Google.OrTools/9.0.9048": {
+        "dependencies": {
+          "Google.OrTools.runtime.win-x64": "9.0.9048",
+          "Google.Protobuf": "3.15.8"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Google.OrTools.dll": {
+            "assemblyVersion": "9.0.9048.0",
+            "fileVersion": "9.0.9048.0"
+          }
+        }
+      },
+      "Google.OrTools.runtime.win-x64/9.0.9048": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/google-ortools-native.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Google.Protobuf/3.15.8": {
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.15.8.0",
+            "fileVersion": "3.15.8.0"
+          }
+        }
+      },
+      "System.Memory/4.5.3": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {}
+    }
+  },
+  "libraries": {
+    "MipSolver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.OrTools/9.0.9048": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8wRzrbLG01FG+drzRXZhGK+CC5RXAWC9sj+L2DgC4R1rmh59nH6RI13i0CeIgJmtmLlXdbF2C6IGr490tqzE1g==",
+      "path": "google.ortools/9.0.9048",
+      "hashPath": "google.ortools.9.0.9048.nupkg.sha512"
+    },
+    "Google.OrTools.runtime.win-x64/9.0.9048": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L2agJXe8mqGmUdakOsGXcASgElwOUzokTAaxvOa7E6zbIBDyMnXZgNJ20YmqeGUrAL+BZQ1MmT1yrl8OdPe3PA==",
+      "path": "google.ortools.runtime.win-x64/9.0.9048",
+      "hashPath": "google.ortools.runtime.win-x64.9.0.9048.nupkg.sha512"
+    },
+    "Google.Protobuf/3.15.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tA0S9QXJq+r3CjwBlcn5glEUrbdAxhPWO4yhq5+ycn6WW6+nsvqzO6Qf6NE9XWbEz/F2QSpBTxjdTI7SvVy7CQ==",
+      "path": "google.protobuf/3.15.8",
+      "hashPath": "google.protobuf.3.15.8.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    }
+  }
+}

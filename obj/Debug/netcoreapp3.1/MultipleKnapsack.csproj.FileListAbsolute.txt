@@ -1,0 +1,17 @@
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.exe
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.csprojAssemblyReference.cache
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.AssemblyInfoInputs.cache
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.AssemblyInfo.cs
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.deps.json
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.runtimeconfig.json
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.runtimeconfig.dev.json
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.dll
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\MultipleKnapsack.pdb
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\Google.OrTools.dll
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\arunag\source\repos\MultipleKnapsack\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\google-ortools-native.dll
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.csproj.CoreCompileInputs.cache
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.csproj.CopyComplete
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.dll
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.pdb
+C:\Users\arunag\source\repos\MultipleKnapsack\obj\Debug\netcoreapp3.1\MultipleKnapsack.genruntimeconfig.cache

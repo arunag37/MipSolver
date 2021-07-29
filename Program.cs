@@ -13,42 +13,40 @@ namespace MipSolver
             Solver solver1 = Solver.CreateSolver("SCIP");
 
             //Variables with combination of loans and warehouse
-            Variable[,] x = new Variable[loans.Count(), warehouses.Count()];
-            foreach (var loan in loans)
+            Variable[] a = new Variable[items.Count()];
+            foreach (var item in items)
             {
-                foreach (var warehouse in warehouses)
-                {
-                    x[loan.Id, warehouse.Id] = solver1.MakeIntVar(0, 1, $"x_{loan.Id}_{warehouse.Id}");
-                }
+                a[item.Id] = solver1.MakeIntVar(0, 1, $"{item.Loan.Name}_{item.Warehouse.Name}");
             }
+
             //Constraint 1 :Each loan can be assigned to atmost 1 warehouse
             foreach (var loan in loans)
             {
+                var loanItems = items.Where(r => r.Loan.Name == loan.Name);
                 Constraint constraint = solver1.MakeConstraint(0, 1, "");
-                foreach (var warehouse in warehouses)
+                foreach (var item in loanItems)
                 {
-                    constraint.SetCoefficient(x[loan.Id, warehouse.Id], 1);
+                    constraint.SetCoefficient(a[item.Id], 1);
                 }
             }
 
             //Constraint 2 :Loan amount assigned to a warehouse can't exceed its limit
             foreach (var warehouse in warehouses)
             {
+                var warehouseItems = items.Where(r => r.Warehouse.Name == warehouse.Name);
                 var pendingLimit = warehouse.TotalLimit - warehouse.UtilisedAmount;
                 Constraint constraint = solver1.MakeConstraint(0, pendingLimit, "");
-                foreach (var loan in loans)
+                foreach (var item in warehouseItems)
                 {
-                    constraint.SetCoefficient(x[loan.Id, warehouse.Id], loan.LoanAmount * warehouse.AdvanceRate);
+                    constraint.SetCoefficient(a[item.Id], item.Loan.LoanAmount * warehouse.AdvanceRate);
                 }
+               
             }
-
+           
             Objective objective = solver1.Objective();
-            foreach (var loan in loans)
+            foreach (var item in items)
             {
-                foreach (var warehouse in warehouses)
-                {
-                    objective.SetCoefficient(x[loan.Id, warehouse.Id], loan.LoanAmount * warehouse.AdvanceRate);
-                }
+                objective.SetCoefficient(a[item.Id], item.Loan.LoanAmount * item.Warehouse.AdvanceRate);
             }
             objective.SetMaximization();
             Solver.ResultStatus resultStatus = solver1.Solve();
@@ -69,14 +67,10 @@ namespace MipSolver
 
             //Variables with combination of loans and warehouse
 
-
-            Variable[,] a = new Variable[loans.Count(), warehouses.Count()];
-            foreach (var loan in loans)
+            Variable[] a = new Variable[items.Count()];
+            foreach (var item in items)
             {
-                foreach (var warehouse in warehouses)
-                {
-                    a[loan.Id, warehouse.Id] = solver2.MakeIntVar(0, 1, $"x_{loan.Id}_{warehouse.Id}");
-                }
+                a[item.Id] = solver2.MakeIntVar(0, 1, $"{item.Loan.Name}_{item.Warehouse.Name}");
             }
             Variable[] z = new Variable[warehouses.Count()];
             foreach (var warehouse in warehouses)
@@ -87,10 +81,11 @@ namespace MipSolver
             //Constraint 1 :Each loan can be assigned to atmost 1 warehouse
             foreach (var loan in loans)
             {
+                var loanItems = items.Where(r => r.Loan.Name == loan.Name);
                 Constraint constraint = solver2.MakeConstraint(0, 1, "");
-                foreach (var warehouse in warehouses)
+                foreach (var item in loanItems)
                 {
-                    constraint.SetCoefficient(a[loan.Id, warehouse.Id], 1);
+                    constraint.SetCoefficient(a[item.Id], 1);
                 }
             }
 
@@ -99,16 +94,17 @@ namespace MipSolver
 
             foreach (var warehouse in warehouses)
             {
+                var warehouseItems = items.Where(r => r.Warehouse.Name == warehouse.Name);
                 double amountTemp = warehouse.MinUtilization - warehouse.UtilisedAmount;
                 double pendingLimit = warehouse.TotalLimit - warehouse.UtilisedAmount;
                 LinearExpr tmpAmount = new LinearExpr();
                 LinearExpr tempInterest = new LinearExpr();
-                foreach (var loan in loans)
+                foreach (var item in warehouseItems)
                 {
                     //For Interest Calculation
-                    tempInterest += (a[loan.Id, warehouse.Id] * (loan.LoanAmount * warehouse.AdvanceRate * warehouse.InterestRate / 100));
+                    tempInterest += (a[item.Id] * (item.Loan.LoanAmount * warehouse.AdvanceRate * warehouse.InterestRate / 100));
                     //For penalty Calculation
-                    tmpAmount += (a[loan.Id, warehouse.Id] * loan.LoanAmount * warehouse.AdvanceRate);
+                    tmpAmount += (a[item.Id] * item.Loan.LoanAmount * warehouse.AdvanceRate);
 
 
                 }
@@ -140,18 +136,19 @@ namespace MipSolver
             double TotalUtil = 0;
             foreach (var warehouse in warehouses)
             {
+                var warehouseItems = items.Where(r => r.Warehouse.Name == warehouse.Name);
                 double BinWeight = 0.0;
                 double totalLnAmt = 0.0;
                 double utilTemp = 0;
                 Console.WriteLine("\n\nWarehouse " + warehouse.Name + "      Limit: " + (warehouse.TotalLimit - warehouse.UtilisedAmount));
-                foreach (var loan in loans)
+                foreach (var item in warehouseItems)
                 {
-                    if (a[loan.Id, warehouse.Id].SolutionValue() == 1)
+                    if (a[item.Id].SolutionValue() == 1)
                     {
-                        Console.WriteLine($"{loan.Name} (Loan Amount: {loan.LoanAmount})");
-                        BinWeight += (loan.LoanAmount * warehouse.AdvanceRate * warehouse.InterestRate / 100);
-                        totalLnAmt += (loan.LoanAmount * warehouse.AdvanceRate);
-                        TotalUtil += loan.LoanAmount * warehouse.AdvanceRate;
+                        Console.WriteLine($"{item.Loan.Name} (Loan Amount: {item.Loan.LoanAmount})");
+                        BinWeight += (item.Loan.LoanAmount * warehouse.AdvanceRate * warehouse.InterestRate / 100);
+                        totalLnAmt += (item.Loan.LoanAmount * warehouse.AdvanceRate);
+                        TotalUtil += item.Loan.LoanAmount * warehouse.AdvanceRate;
                     }
                 }
                 //Console.WriteLine("Amount Utilized :  " + BinWeight);

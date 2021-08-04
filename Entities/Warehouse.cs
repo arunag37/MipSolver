@@ -16,5 +16,6 @@ namespace MipSolver.Entities
         public double TotalLimit { get; set; }
         public double UtilisedAmount { get; set; }
         public double MinUtilization { get; set; }
+        public bool IsDummy { get; set; }
     }
 }

@@ -18,8 +18,23 @@ namespace MipSolver.Entities
             {
                 foreach (var loan in loans)
                 {
-                    this.Add(new LoanInWarehouse() { Id = i, Loan= loan ,Warehouse= warehouse });
+                    //if(loan.Name== "Loan-1")
+                    //{
+                    //    if(warehouse.Name=="BAML")
+                    //    {
+                    //        this.Add(new LoanInWarehouse() { Id = i, Loan = loan, Warehouse = warehouse });
+                    //        i++;
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    this.Add(new LoanInWarehouse() { Id = i, Loan = loan, Warehouse = warehouse });
+                    //    i++;
+                    //}
+                    this.Add(new LoanInWarehouse() { Id = i, Loan = loan, Warehouse = warehouse });
                     i++;
+
+
                 }
             }
         }

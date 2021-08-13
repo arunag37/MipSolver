@@ -47,6 +47,7 @@ namespace MipSolver.Entities
             //this.Add(new Loan() { Id = 3, Name = "Loan-4", LoanAmount = 300, Cost = 0.75 });
             //this.Add(new Loan() { Id = 4, Name = "Loan-5", LoanAmount = 75, Cost = 0.75 });
             //
+           
             this.Add(new Loan() { Id = 0, Name = "Loan-0", LoanAmount = 472900, Cost = 2.00 });
             this.Add(new Loan() { Id = 1, Name = "Loan-1", LoanAmount = 402000, Cost = 2.00 });
             this.Add(new Loan() { Id = 2, Name = "Loan-2", LoanAmount = 544300, Cost = 2.00 });
@@ -8047,6 +8048,7 @@ namespace MipSolver.Entities
             this.Add(new Loan() { Id = 7997, Name = "Loan-7997", LoanAmount = 597700, Cost = 2.00 });
             this.Add(new Loan() { Id = 7998, Name = "Loan-7998", LoanAmount = 523500, Cost = 2.00 });
             this.Add(new Loan() { Id = 7999, Name = "Loan-7999", LoanAmount = 175300, Cost = 2.00 });
+            this.Add(new Loan() { Id = 8000, Name = "Loan-8000", LoanAmount = 1, Cost = 2.00 });
 
 
 

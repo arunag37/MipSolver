@@ -14,7 +14,7 @@ namespace MipSolver.Entities
         public double AdvanceRate { get; set; }
         public double PenaltyRate { get; set; }
         public double TotalLimit { get; set; }
-        public double UtilisedAmount { get; set; }
+        public double StartingBalance { get; set; }
         public double MinUtilization { get; set; }
         public bool IsDummy { get; set; }
     }

@@ -99,7 +99,7 @@ namespace MipSolver
                 double BinWeight = 0.0;
                 double totalLnAmt = 0.0;
 
-                Console.WriteLine("\n\nWarehouse " + warehouse.Name + "      Limit: " + (warehouse.TotalLimit - warehouse.StartingBalance));
+                //Console.WriteLine("\n\nWarehouse " + warehouse.Name + "      Limit: " + (warehouse.TotalLimit - warehouse.StartingBalance));
                 foreach (var item in warehouseItems)
                 {
                     if (a[item.Id].SolutionValue() == 1)
@@ -113,8 +113,8 @@ namespace MipSolver
                 }
                             
                 TotalWeight += BinWeight;
-                Console.WriteLine("Total AMount  " + totalLnAmt);
-                Console.WriteLine("Balance  " + (warehouse.TotalLimit - warehouse.StartingBalance - totalLnAmt));
+                //Console.WriteLine("Total AMount  " + totalLnAmt);
+                //Console.WriteLine("Balance  " + (warehouse.TotalLimit - warehouse.StartingBalance - totalLnAmt));
 
             } 
             Console.WriteLine("\n\n Total Utilised amount: " + (TotalUtil));
@@ -125,7 +125,7 @@ namespace MipSolver
         public static double Optimizer(IEnumerable<LoanInWarehouse> items, IEnumerable<Loan> loans, IEnumerable<Warehouse> warehouses, double maxUtilAmt)
         {
             Console.WriteLine("\nMax AMount  " + maxUtilAmt);
-            Solver solver = Solver.CreateSolver("SCIP");
+            Solver solver = Solver.CreateSolver("CBC");
             //Variables with combination of loans and warehouse
             Variable[] a = new Variable[items.Count()];
             foreach (var item in items)
@@ -135,7 +135,7 @@ namespace MipSolver
             Variable[] z = new Variable[warehouses.Count()];
             foreach (var warehouse in warehouses)
             {
-                z[warehouse.Id] = solver.MakeNumVar(double.NegativeInfinity, double.PositiveInfinity, $"z_{warehouse.Id}");
+                z[warehouse.Id] = solver.MakeNumVar(0, double.PositiveInfinity, $"z_{warehouse.Id}");
             }
             // dummy Constraint
             double dummypenalty = 0;
@@ -197,35 +197,35 @@ namespace MipSolver
                 //Constraint 2 :Loan amount assigned to a warehouse can't exceed its limit
                 solver.Add(tmpAmount <= Normalize(pendingLimit));
 
-                // Adding constraints for finding absolute value
-                solver.Add(data <= z[warehouse.Id]);
-                solver.Add(-data <= z[warehouse.Id]);
 
-                //if (warehouse.StartingBalance >= minUtilAMt || minUtilAMt == 0)  //no penalty scenario
-                //{
-                //    //Finding total loss of each warehouse(penalty+interest)
-                //    totalLoss += tempInterest;
-                //}
+
+                if (warehouse.MinUtilization == 0)  //no penalty scenario
+                {
+                    //Finding total loss of each warehouse(penalty+interest)
+                    totalLoss += tempInterest;
+                }
                 //else if (loanSum + warehouse.StartingBalance < minUtilAMt)  //Always +ve scenario
                 //{
                 //    //Finding total loss of each warehouse(penalty+interest)
                 //    totalLoss += ((data * warehouse.PenaltyRate) / 100) + tempInterest;
                 //}
-                //else
-                //{
-
-                //    // Finding total loss of each warehouse(penalty+interest)
-                //    totalLoss += ((z[warehouse.Id] + data) * warehouse.PenaltyRate) / 200 + tempInterest;
-                //}
+                else
+                {
+                    // Adding constraints for finding absolute value
+                    solver.Add(data <= z[warehouse.Id]);
+                    solver.Add(-data <= z[warehouse.Id]);
+                    // Finding total loss of each warehouse(penalty+interest)
+                    totalLoss += (((z[warehouse.Id] + data) * warehouse.PenaltyRate) / 200) + tempInterest;
+                }
 
 
 
                 //Adding constraints for finding absolute value
 
-                solver.Add(data <= z[warehouse.Id]);
-                solver.Add(-data <= z[warehouse.Id]);
-                //Finding total loss of each warehouse(penalty+interest)
-                totalLoss += ((z[warehouse.Id] + data) * warehouse.PenaltyRate) / 200 + tempInterest;
+               // solver.Add(data <= z[warehouse.Id]);
+               // solver.Add(-data <= z[warehouse.Id]);
+               //// Finding total loss of each warehouse(penalty+interest)
+               // totalLoss += ((z[warehouse.Id] + data) * warehouse.PenaltyRate) / 200 + tempInterest;
 
                 totalUtilAmount += tmpAmount;
                 totalCount += totalC;
